@@ -1,0 +1,51 @@
+<p></p>
+<div class="container">
+  <div class="panel panel-primary">
+    <div class="panel-heading">About Component</div>
+    <div class="panel-body">
+        <div>
+          <h3>Infos: </h3>
+            <ul class=list-group>
+              <li class=list-group-item>Nom:<strong>{{infos.name}}</strong></li>
+              <li class=list-group-item>Email:<strong>{{infos.email}}</strong></li>
+              <li class=list-group-item>Email:<strong>{{infos.tel}}</strong></li>
+            </ul>
+          </div>
+          <!--FORM-->
+          <!--div class="form-group">
+            <label class="control-label"> Message:</label>
+            <input type="text" [(ngModel)]="commentaire.message">
+            <button [disabled]="!commentaire.message" class="btn btn-primary" (click)="addComments()">Ajouter commentaire</button>
+          </div>
+          <div>
+              <h3>Commentaires: </h3>
+            <ul class="list-group">
+              <li class="list-group-item" *ngFor="let c of comments">
+                  {{c.message}}
+                  <span class="badge">{{c.date | date:'dd/MM/yyyy:HH:mm:ss'}}</span>
+              </li>
+            </ul>
+          </div-->
+
+
+        <!--FORM-->
+        <form #f="ngForm" (ngSubmit)="addCommentsForm(f.value)" action="">
+            <div class="form-group">
+              <label class="control-label"> Message:</label>
+              <input name="message" type="text" ngModel="" [(ngModel)]="commentaire.message" required>
+              <button [disabled]="!f.valid" class="btn btn-primary">Ajouter commentaire</button>
+            </div>
+            <div>
+                <h3>Commentaires: </h3>
+              <ul class="list-group">
+                <li class="list-group-item" *ngFor="let c of comments">
+                    {{c.message}}
+                    <span class="badge">{{c.date | date:'dd/MM/yyyy:HH:mm:ss'}}</span>
+                </li>
+              </ul>
+            </div>
+          </form>
+    </div>
+  </div>
+</div>
+

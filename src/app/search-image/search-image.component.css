@@ -1,0 +1,12 @@
+.search {
+  position: absolute;
+  display: inline;
+  margin: 25px -10px;
+
+}
+.cadre {
+  height: 250px;
+}
+.clickable {
+  cursor: pointer;
+}
