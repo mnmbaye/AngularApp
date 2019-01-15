@@ -11,7 +11,7 @@ export class SearchImageComponent implements OnInit {
 
   pagePhotos:any;
   currentPage:number=1;
-  size:number=5;
+  size:number=10;
   pages:Array<number>=[];
   totalPages:number;
   motCle:string="";
@@ -26,7 +26,7 @@ export class SearchImageComponent implements OnInit {
     this.http.get("https://pixabay.com/api/?key=10169135-e7665b3aab4773991b4769a2d&q=" + dataForm.motCle+"&per_page="+this.size+"&page="+this.currentPage)
     .subscribe(data=> {
         this.pagePhotos = data;
-        this.totalPages = this.pagePhotos.totalHits;
+        this.totalPages = this.pagePhotos.totalHits/this.size;
         if(this.pagePhotos.totalHits % this.size!=0) ++this.totalPages;
         this.pages = new Array(this.totalPages);
     })

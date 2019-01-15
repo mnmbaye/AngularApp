@@ -39,10 +39,10 @@
       <div class="row">
         <ul class="nav nav-pills">
           <li
-            [ngClass]="{ active: currentPage == i + 1 }"
+            [ngClass]="{ 'active': currentPage == i + 1 }"
             class="clickable"
             *ngFor="let page of pages; let i = index"
-          >
+            >
             <a (click)="gotToPage(i)">{{ i }}</a>
           </li>
         </ul>
